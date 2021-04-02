@@ -45,14 +45,16 @@ export default function Almanac() {
             <IconButton
               {...iconBtnStyle}
               aria-label='decrement'
-              icon={<ChevronLeftIcon />}
+              icon={<ChevronLeftIcon color='white' />}
               onClick={handleDecrement}
             />
-            <Heading lineHeight='1.5'>{year}年</Heading>
+            <Heading color='white' lineHeight='1.5'>
+              {year}年
+            </Heading>
             <IconButton
               {...iconBtnStyle}
               aria-label='increment'
-              icon={<ChevronRightIcon />}
+              icon={<ChevronRightIcon color='white' />}
               onClick={handleIncrement}
             />
           </HStack>

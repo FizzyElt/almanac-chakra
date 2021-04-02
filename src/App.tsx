@@ -7,8 +7,8 @@ import {
   VStack,
   Code,
   Grid,
-  theme,
 } from '@chakra-ui/react'
+import { theme } from './theme'
 import Almanac from './components/Almanac'
 
 export const App = () => (
