@@ -38,14 +38,21 @@ export default function Month({ year, month, today }: MonthProps) {
       </GridItem>
 
       <WeekBar />
-
-      {monthDayList.map((item) => {
-        return (
-          <GridItem colSpan={1} key={item.date}>
-            <DateItem {...item} isToday={today === item.date} />
-          </GridItem>
-        )
-      })}
+      <GridItem colSpan={7}>
+        <Grid
+          gap={4}
+          templateColumns='repeat(7,1fr)'
+          templateRows='repeat(6,1fr)'
+        >
+          {monthDayList.map((item) => {
+            return (
+              <GridItem h='8' colSpan={1} rowSpan={1} key={item.date}>
+                <DateItem {...item} isToday={today === item.date} />
+              </GridItem>
+            )
+          })}
+        </Grid>
+      </GridItem>
     </Grid>
   )
 }

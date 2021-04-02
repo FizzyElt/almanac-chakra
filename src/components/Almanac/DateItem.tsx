@@ -16,7 +16,7 @@ export default function DateItem({
 }: DateItem) {
   if (!isCurrentMonth) {
     return (
-      <Center h='10' w='10' color={'transparent'}>
+      <Center h='full' color={'transparent'}>
         {day}
       </Center>
     )
@@ -28,10 +28,9 @@ export default function DateItem({
 
   return (
     <Center
+      h='full'
       cursor='pointer'
-      h='10'
-      w='10'
-      borderRadius='full'
+      borderRadius='lg'
       color={'white'}
       bgColor={isToday ? 'red.500' : 'transparent'}
       transition='0.3s'
