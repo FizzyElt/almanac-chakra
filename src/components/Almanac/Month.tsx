@@ -31,10 +31,7 @@ export default function Month({ year, month, today }: MonthProps) {
     >
       <GridItem colSpan={7}>
         <Center>
-          <HStack>
-              
-            <Text>{month + 1}月</Text>
-          </HStack>
+          <Text fontWeight='bold'>{month + 1}月</Text>
         </Center>
       </GridItem>
 

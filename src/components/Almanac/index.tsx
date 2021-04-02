@@ -1,12 +1,35 @@
 import React, { useState } from 'react'
-import { Box, Grid, GridItem, Text, Heading, Center } from '@chakra-ui/react'
+import {
+  Grid,
+  GridItem,
+  Heading,
+  Center,
+  IconButton,
+  HStack,
+} from '@chakra-ui/react'
 import Month from './Month'
 import format from 'date-fns/format'
+import { ChevronRightIcon, ChevronLeftIcon } from '@chakra-ui/icons'
 
 export default function Almanac() {
   const [year, setYear] = useState<number>(new Date().getFullYear())
 
+  const handleIncrement = () => {
+    setYear((prev) => prev + 1)
+  }
+
+  const handleDecrement = () => {
+    setYear((prev) => prev - 1)
+  }
+
   const today = format(Date.now(), 'yyyy/MM/dd')
+
+  const iconBtnStyle = {
+    bgColor: 'teal.500',
+    _hover: {
+      bgColor: 'teal.300',
+    },
+  }
 
   return (
     <Grid
@@ -18,7 +41,21 @@ export default function Almanac() {
     >
       <GridItem colSpan={4}>
         <Center>
-          <Heading>{year}年</Heading>
+          <HStack align='center' spacing={6}>
+            <IconButton
+              {...iconBtnStyle}
+              aria-label='decrement'
+              icon={<ChevronLeftIcon />}
+              onClick={handleDecrement}
+            />
+            <Heading lineHeight='1.5'>{year}年</Heading>
+            <IconButton
+              {...iconBtnStyle}
+              aria-label='increment'
+              icon={<ChevronRightIcon />}
+              onClick={handleIncrement}
+            />
+          </HStack>
         </Center>
       </GridItem>
 

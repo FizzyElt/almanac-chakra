@@ -24,7 +24,6 @@ export default function DateItem({
 
   const hoverStyled = {
     bgColor: 'teal.400',
-    color: 'gray.700',
   }
 
   return (
